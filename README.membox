@@ -1,0 +1,10 @@
+README for Kannel membox
+------------------------
+
+Membox is a Kannel box oriented at high-performance injection of MT messages into Kannel.
+
+To achieve this, a shared memory queue is implemented. Client applications write to this
+queue using shared memory. The box reads those messages and inject them into bearerbox,
+thus reducing the need to implement a threaded client to achieve similar results using
+the sendsms interface. It also avoid the neeed to deploy an SQL instance (aka sqlbox)
+for MT injection.

@@ -1,0 +1,19 @@
+2008-05-13	Alejandro Guerrieri <aguerrieri at kannel.org>
+    * test/test_send.c: retry messages before giving up
+
+2008-04-26	Stipe Tolj  <stolj at kannel.org>
+    * test/test_send.s: fix compiler warning. NLC.
+       
+2008-04-26	Stipe Tolj  <stolj at kannel.org>
+    * configure, config.[sub|guess], VERSION, utils/foobar-config.sh: convert
+      line endings to UNIX format.
+      
+2008-04-26	Stipe Tolj  <stolj at kannel.org>
+    * gw/membox.c: fix various compiler warnings. NLC.
+
+2008-04-13	Alejandro Guerrieri <aguerrieri at kannel.org>
+    * */*: first deployment. Approach based on shared queues.
+    
+2008-03-25	Stipe Tolj  <stolj at kannel.org>
+    * */*: initial checkin. This shall be a template body for Kannel foobox
+      modules that dock to bearerbox as smsbox connection instances.

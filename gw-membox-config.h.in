@@ -1,0 +1,5 @@
+/* Define gateway module  name */
+#undef GW_BOX_NAME
+
+/* Define which version we use */
+#undef GW_BOX_VERSION

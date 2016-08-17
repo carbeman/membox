@@ -1,0 +1,10 @@
+#MEMBOX SETUP
+group = membox
+id = membox
+smsbox-id = membox
+bearerbox-host = "127.0.0.1"
+bearerbox-port = 13001
+smsbox-port = 13015
+smsbox-port-ssl = false
+log-file = "/var/log/kannel/membox.log"
+log-level = 2

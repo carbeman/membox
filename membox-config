@@ -1,0 +1,44 @@
+#!/bin/sh
+
+usage()
+{
+	echo "usage: $0 [--cflags] [--libs] [--version]"
+	exit 0
+}
+
+cflags=no
+libs=no
+version=no
+
+test "$1" || usage
+
+while test "$1"; do
+	case "$1" in
+	--cflags )
+		cflags=yes
+		;;
+	--libs )
+		libs=yes
+		;;
+	--version )
+		version=yes
+		;;
+	* )
+		usage
+		;;
+	esac
+	shift
+done
+
+test "$cflags" = yes && cat << FOO
+-I/home/emanus/testing/membox/build/include/kannel -I/home/emanus/testing/membox/build/include/membox -g -O0 -I/home/emanus/project/kannel/include/kannel -g -O0 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -I/usr/include/openssl -I/home/emanus/project/amgx/include
+FOO
+
+test "$libs" = yes && cat << FOO
+-L/home/emanus/testing/membox/build/lib/kannel -lgw -lwap -lgwlib  -L/home/emanus/project/kannel/lib/kannel -lgw -lwap -lgwlib -lssl -lrt -lresolv -lnsl -lm  -lpthread -lxml2 -L/usr/lib64 -lcrypto -lssl -L/home/emanus/project/amgx/lib -lamgxlib -lwritestatus -lboost_system
+FOO
+
+test "$version" = yes && cat << FOO
+cvs-
+FOO
+
